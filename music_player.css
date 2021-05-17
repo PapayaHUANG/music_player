@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(180deg, rgba(61, 187, 209,0.8),rgba(223, 237, 240,0.7));
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:0;
+}
+
+main {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow:0px 10px 10px 0px rgba(224, 238, 250, 0.863) ;
+    display:flex;
+    position: relative;
+    padding:20px 40px;
+    z-index: 10;
+    margin:100px 0;
+    z-index: 1;
+    height: 80px;
+
+}
+
+.snapshot {
+    position: relative;
+    width: 130px;
+   
+}
+
+.snapshot::after {
+    content:"";
+    background-color: #fff;
+    border-radius: 50%;
+    position:absolute;
+    width:35px;
+    height: 35px;
+    left: 28%;
+    bottom: 130%;
+    
+    
+
+}
+
+@keyframes rotation {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+.snapshot img {
+    position: absolute;
+    border-radius: 50%;
+    height: 130px;
+    width: inherit;
+    bottom: 10%;
+    left: -10%;
+    object-fit: cover;
+    animation: rotation 3s linear infinite;
+    animation-play-state: paused;
+    
+}
+
+
+
+
+
+.control-pad {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+
+button {
+    border: 0;
+    background-color: #fff;
+    font-size: 1.5em;
+    color:rgba(182, 200, 204, .8);
+    padding: 0 20px;
+    margin: 10px, 0;
+    cursor: pointer;
+}
+
+#play {
+    font-size: 2em;
+}
+
+.display {
+    z-index: 0;
+    background-color:rgba(248, 249, 250, 0.6);
+    border-radius: 15px;
+    width: 360px;
+    height: 80px;
+    position: relative;
+    bottom: 180px;
+    padding: 0 0 0px 160px;
+    margin:0;
+    transform:translateY(0);
+    transition: transform .3s ease-in;
+    
+}
+
+
+
+
+
+
+
+
+#progress-container {
+    background-color: #fff;
+    width: 180px;
+    height: 5px;
+    margin:0 auto;
+    position: absolute;
+    bottom:20px;
+    padding:0;
+    border-radius: 15px; 
+
+}
+
+#progress {
+    background-color: #a8dae6;
+    height: inherit;
+    width: 0%;
+    border-radius: inherit;
+    
+   
+    
+}
+
+footer {
+    position: relative;
+    bottom:175px;
+    left:150px;
+    font-size: 0.5em;
+}
